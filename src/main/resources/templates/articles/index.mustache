@@ -1,0 +1,24 @@
+{{>layouts/header}}
+<!-- 목록 페이지 -->
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+    </tr>
+    </thead>
+    {{#articleList}} <!-- 컨트롤러에서 선언한 변수의 사용범위를 설정 -->
+        <tr>
+            <th>{{id}}</th>
+            <td><a href="/articles/{{id}}">{{title}}</a></td>
+            <td>{{content}}</td>
+        </tr>
+    {{/articleList}}
+
+    </tbody>
+</table>
+<a href="/articles/new" class="btn btn-warning">새글 작성하기</a>
+
+
+{{>layouts/footer}}

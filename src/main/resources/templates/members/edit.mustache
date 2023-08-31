@@ -1,0 +1,21 @@
+{{>layouts/header}}
+
+<form class="container" action="/members/update" method="post">
+
+<input type="hidden" value="{{member.id}}" name="id"> <!-- 위의 요청주소에서 db에서 id에 해당하는 값을 가져오기 위해 입력하는 코드 -->
+
+    {{#member}}
+    <div class="mb-3">
+        <label class="form-label">이메일</label>
+        <input class="form-control" type="email" name="email" value="{{email}}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">비밀번호</label>
+        <input class="form-control" type="password" name="password" value="{{password}}">
+    </div>
+    <button type="submit" class="btn btn-primary">가입완료</button>
+    <a href="/members" class="btn btn-danger">회원목록 페이지</a>
+</form>
+    {{/member}}
+
+{{>layouts/footer}}

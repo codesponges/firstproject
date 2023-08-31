@@ -1,0 +1,21 @@
+{{>layouts/header}}
+
+{{#article}}
+<form class="container" action="/articles/update" method="post">
+    <input type="hidden" name="id" value="{{id}}"> <!-- 수정할 article의 id도 form 데이터로 전송하기 위해 입력 -->
+
+    <div class="mb-3">
+        <label class="form-label">제목</label>
+        <input type="text" class="form-control" name="title" value="{{title}}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">내용</label>
+        <textarea class="form-control" rows="3" name="content">{{content}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">저장 완료</button>
+    <a href="/articles/{{id}}">상세 페이지</a>
+</form>
+{{/article}}
+<a href="/articles" class="btn btn-danger">목록 페이지</a>
+
+{{>layouts/footer}}
